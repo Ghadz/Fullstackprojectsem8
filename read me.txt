@@ -1,0 +1,10 @@
+Name: Ghady AL Chouity
+
+API used:-NASA -j6kC9r56Fqs7i3SgFefeJJBeRQzHG6Jd0Za4ggSp
+	 -Space X open source -https://api.spacexdata.com/v4/
+	 -Wolfram alpha -Y83QV9-56QJXGQXXY
+
+Description: Event horizon is a website for everyone who like space and want to learn more about the things that are happening around us but not always visible to naked eye. Giving good graphics and easy to use; this website should be usable by everyone.
+
+Special requirement: Implement a modal popup for a detailed view of an item
+Basically I used it for every image that needed more information. Featuring the image wanted, a short description of the image and a close button.  	
