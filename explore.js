@@ -43,39 +43,60 @@ const categoryTypes = {
   'space-wonders': 'nebula supernova galaxy',
   'launch-station': 'launch pad rocket launch',
   'solar-system': 'planets',
+  'discover-mars': 'mars rovers',
+  'space-stations': 'space stations',
+  'earth-3d': '3d earth',
   'astronaut-info': 'astronauts',
   'become-astronaut': 'application'
 };
 
-// Well-known astronauts data
+// Well-known astronauts data with nationality flags instead of photos
 const astronauts = [
-  { name: "Neil Armstrong", nationality: "American", age: "82 (1930-2012)", height: "5'11\"", timeInSpace: "8 days 14 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Neil_Armstrong_pose.jpg/330px-Neil_Armstrong_pose.jpg" },
-  { name: "Buzz Aldrin", nationality: "American", age: "94", height: "5'10\"", timeInSpace: "12 days 1 hour", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Buzz_Aldrin.jpg/330px-Buzz_Aldrin.jpg" },
-  { name: "Yuri Gagarin", nationality: "Soviet", age: "34 (1934-1968)", height: "5'2\"", timeInSpace: "1 hour 48 minutes", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Yuri_Gagarin_in_Sweden.jpg/330px-Yuri_Gagarin_in_Sweden.jpg" },
-  { name: "Valentina Tereshkova", nationality: "Soviet", age: "87", height: "5'4\"", timeInSpace: "2 days 22 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Valentina_Tereshkova.jpg/330px-Valentina_Tereshkova.jpg" },
-  { name: "John Glenn", nationality: "American", age: "95 (1921-2016)", height: "5'10\"", timeInSpace: "9 days 2 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/John_Glenn.jpg/330px-John_Glenn.jpg" },
-  { name: "Sally Ride", nationality: "American", age: "61 (1951-2012)", height: "5'5\"", timeInSpace: "14 days 7 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Sally_Ride.jpg/330px-Sally_Ride.jpg" },
-  { name: "Chris Hadfield", nationality: "Canadian", age: "65", height: "5'9\"", timeInSpace: "166 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chris_Hadfield.jpg/330px-Chris_Hadfield.jpg" },
-  { name: "Mae Jemison", nationality: "American", age: "68", height: "5'4\"", timeInSpace: "7 days 22 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mae_Jemison.jpg/330px-Mae_Jemison.jpg" },
-  { name: "Scott Kelly", nationality: "American", age: "60", height: "5'8\"", timeInSpace: "520 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Scott_Kelly.jpg/330px-Scott_Kelly.jpg" },
-  { name: "Peggy Whitson", nationality: "American", age: "64", height: "5'4\"", timeInSpace: "665 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Peggy_Whitson.jpg/330px-Peggy_Whitson.jpg" },
-  { name: "Tim Peake", nationality: "British", age: "52", height: "6'0\"", timeInSpace: "185 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tim_Peake.jpg/330px-Tim_Peake.jpg" },
-  { name: "Samantha Cristoforetti", nationality: "Italian", age: "47", height: "5'6\"", timeInSpace: "199 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Samantha_Cristoforetti.jpg/330px-Samantha_Cristoforetti.jpg" },
-  { name: "Andreas Mogensen", nationality: "Danish", age: "47", height: "6'0\"", timeInSpace: "9 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andreas_Mogensen.jpg/330px-Andreas_Mogensen.jpg" },
-  { name: "Soyeon Yi", nationality: "South Korean", age: "44", height: "5'3\"", timeInSpace: "10 days 21 hours", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Soyeon_Yi.jpg/330px-Soyeon_Yi.jpg" },
-  { name: "Liu Yang", nationality: "Chinese", age: "45", height: "5'4\"", timeInSpace: "13 days", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Liu_Yang.jpg/330px-Liu_Yang.jpg" }
+  { name: "Neil Armstrong", nationality: "American", age: "82 (1930-2012)", height: "5'11\"", timeInSpace: "8 days 14 hours", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Buzz Aldrin", nationality: "American", age: "94", height: "5'10\"", timeInSpace: "12 days 1 hour", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Yuri Gagarin", nationality: "Soviet", age: "34 (1934-1968)", height: "5'2\"", timeInSpace: "1 hour 48 minutes", image: "https://flagcdn.com/w320/ru.png" },
+  { name: "Valentina Tereshkova", nationality: "Soviet", age: "87", height: "5'4\"", timeInSpace: "2 days 22 hours", image: "https://flagcdn.com/w320/ru.png" },
+  { name: "John Glenn", nationality: "American", age: "95 (1921-2016)", height: "5'10\"", timeInSpace: "9 days 2 hours", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Sally Ride", nationality: "American", age: "61 (1951-2012)", height: "5'5\"", timeInSpace: "14 days 7 hours", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Chris Hadfield", nationality: "Canadian", age: "65", height: "5'9\"", timeInSpace: "166 days", image: "https://flagcdn.com/w320/ca.png" },
+  { name: "Mae Jemison", nationality: "American", age: "68", height: "5'4\"", timeInSpace: "7 days 22 hours", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Scott Kelly", nationality: "American", age: "60", height: "5'8\"", timeInSpace: "520 days", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Peggy Whitson", nationality: "American", age: "64", height: "5'4\"", timeInSpace: "665 days", image: "https://flagcdn.com/w320/us.png" },
+  { name: "Tim Peake", nationality: "British", age: "52", height: "6'0\"", timeInSpace: "185 days", image: "https://flagcdn.com/w320/gb.png" },
+  { name: "Samantha Cristoforetti", nationality: "Italian", age: "47", height: "5'6\"", timeInSpace: "199 days", image: "https://flagcdn.com/w320/it.png" },
+  { name: "Andreas Mogensen", nationality: "Danish", age: "47", height: "6'0\"", timeInSpace: "9 days", image: "https://flagcdn.com/w320/dk.png" },
+  { name: "Soyeon Yi", nationality: "South Korean", age: "44", height: "5'3\"", timeInSpace: "10 days 21 hours", image: "https://flagcdn.com/w320/kr.png" },
+  { name: "Liu Yang", nationality: "Chinese", age: "45", height: "5'4\"", timeInSpace: "13 days", image: "https://flagcdn.com/w320/cn.png" }
 ];
 
-// Solar system planets data
+// Mars rovers and discoveries data
+const marsData = [
+  { name: "Perseverance Rover", desc: "NASA's latest Mars rover, searching for signs of ancient life and collecting samples for future return to Earth.", image: "https://images-assets.nasa.gov/image/PIA24424/PIA24424~orig.jpg" },
+  { name: "Curiosity Rover", desc: "Exploring Gale Crater since 2012, studying Mars' climate and geology to understand if the planet could have supported life.", image: "https://images-assets.nasa.gov/image/PIA16064/PIA16064~orig.jpg" },
+  { name: "Opportunity Rover", desc: "Operated for 15 years on Mars, far exceeding its planned 90-day mission, discovering evidence of ancient water.", image: "https://images-assets.nasa.gov/image/PIA03272/PIA03272~orig.jpg" },
+  { name: "Spirit Rover", desc: "The first rover to climb a mountain on another planet, studying Martian geology and climate.", image: "https://images-assets.nasa.gov/image/PIA03273/PIA03273~orig.jpg" },
+  { name: "Mars Surface", desc: "The red, dusty surface of Mars with its distinctive iron oxide that gives the planet its reddish appearance.", image: "https://images-assets.nasa.gov/image/PIA22567/PIA22567~orig.jpg" },
+  { name: "Olympus Mons", desc: "The largest volcano in the solar system, standing 22 km high and 600 km across.", image: "https://images-assets.nasa.gov/image/PIA03276/PIA03276~orig.jpg" }
+];
+
+// Space stations data
+const spaceStations = [
+  { name: "International Space Station (ISS)", desc: "The largest modular space station in low Earth orbit, a multinational collaborative project involving five space agencies.", image: "https://images-assets.nasa.gov/image/iss068e027167/iss068e027167~orig.jpg" },
+  { name: "Mir Space Station", desc: "The first modular space station, assembled in orbit from 1986 to 1996, operated by the Soviet Union and later Russia.", image: "https://images-assets.nasa.gov/image/STS091-705-035/STS091-705-035~orig.jpg" },
+  { name: "Tiangong Space Station", desc: "China's modular space station, currently under construction in low Earth orbit.", image: "https://images-assets.nasa.gov/image/iss068e027168/iss068e027168~orig.jpg" },
+  { name: "Skylab", desc: "America's first space station, operated from 1973 to 1979, conducting hundreds of experiments in microgravity.", image: "https://images-assets.nasa.gov/image/SL2-07-190/SL2-07-190~orig.jpg" }
+];
+
+// Solar system planets data with better image URLs
 const planets = [
-  { name: "Mercury", desc: "The smallest and innermost planet in the Solar System. It has no moons and is the closest planet to the Sun.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia11245.jpg" },
-  { name: "Venus", desc: "The second planet from the Sun and Earth's closest planetary neighbor. It's often called Earth's twin due to similar size.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia00271.jpg" },
-  { name: "Earth", desc: "Our home planet and the only known planet with life. It has one natural satellite - the Moon.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/iss068e027167.jpg" },
-  { name: "Mars", desc: "The fourth planet from the Sun, often called the Red Planet due to its reddish appearance.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia22567.jpg" },
-  { name: "Jupiter", desc: "The largest planet in our Solar System. It's a gas giant with a Great Red Spot storm.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia22946-16.jpg" },
-  { name: "Saturn", desc: "Known for its spectacular ring system. It's the second-largest planet in our Solar System.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia11141.jpg" },
-  { name: "Uranus", desc: "The seventh planet from the Sun, an ice giant with a tilted axis of rotation.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia18182.jpg" },
-  { name: "Neptune", desc: "The eighth and farthest known planet from the Sun. It's also an ice giant.", image: "https://www.nasa.gov/sites/default/files/thumbnails/image/pia01492.jpg" }
+  { name: "Mercury", desc: "The smallest and innermost planet in the Solar System. It has no moons and is the closest planet to the Sun.", image: "https://images-assets.nasa.gov/image/PIA11245/PIA11245~orig.jpg" },
+  { name: "Venus", desc: "The second planet from the Sun and Earth's closest planetary neighbor. It's often called Earth's twin due to similar size.", image: "https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg" },
+  { name: "Earth", desc: "Our home planet and the only known planet with life. It has one natural satellite - the Moon.", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/330px-The_Earth_seen_from_Apollo_17.jpg" },
+  { name: "Mars", desc: "The fourth planet from the Sun, often called the Red Planet due to its reddish appearance.", image: "https://cdn.outsideonline.com/wp-content/uploads/2025/01/mars-illustration-space_s.jpg" },
+  { name: "Jupiter", desc: "The largest planet in our Solar System. It's a gas giant with a Great Red Spot storm.", image: "https://images-assets.nasa.gov/image/PIA22946/PIA22946~orig.jpg" },
+  { name: "Saturn", desc: "Known for its spectacular ring system. It's the second-largest planet in our Solar System.", image: "https://images-assets.nasa.gov/image/PIA11141/PIA11141~orig.jpg" },
+  { name: "Uranus", desc: "The seventh planet from the Sun, an ice giant with a tilted axis of rotation.", image: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg" },
+  { name: "Neptune", desc: "The eighth and farthest known planet from the Sun. It's also an ice giant.", image: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg" }
 ];
 
 // Add event delegation for category section clicks
@@ -93,6 +114,23 @@ mainContainer.addEventListener('click', async function(e) {
   
   // Handle different category types
   if (sectionId === 'space-wonders' || sectionId === 'launch-station') {
+    // Add SpaceX info for launch station at the top
+    if (sectionId === 'launch-station') {
+      try {
+        const spacexResponse = await fetch('https://api.spacexdata.com/v4/launches/upcoming');
+        const spacexData = await spacexResponse.json();
+        if (spacexData.length > 0) {
+          const nextLaunch = spacexData[0];
+          const launchInfo = document.createElement('div');
+          launchInfo.className = 'alert alert-info mb-3';
+          launchInfo.innerHTML = `<strong>🚀 Next SpaceX Launch:</strong> ${nextLaunch.name} - ${new Date(nextLaunch.date_unix * 1000).toLocaleDateString()}`;
+          document.getElementById('categoryModalBody').appendChild(launchInfo);
+        }
+      } catch (e) {
+        console.log('SpaceX API not available');
+      }
+    }
+    
     // Fetch NASA images
     const nasaUrl = `https://images-api.nasa.gov/search?q=${encodeURIComponent(categoryType)}&media_type=image`;
     let images = [];
@@ -111,7 +149,7 @@ mainContainer.addEventListener('click', async function(e) {
     }
     
     const grid = document.createElement('div');
-    grid.className = 'row gallery-grid';
+    grid.className = 'row'; // Removed gallery-grid class to eliminate double scrollbar
     images.forEach((item, idx) => {
       const imgUrl = item.links && item.links[0] ? item.links[0].href : '';
       const title = item.data && item.data[0] ? item.data[0].title : 'NASA Image';
@@ -122,24 +160,6 @@ mainContainer.addEventListener('click', async function(e) {
       grid.appendChild(col);
     });
     
-    // Add SpaceX info for launch station
-    if (sectionId === 'launch-station') {
-      try {
-        const spacexResponse = await fetch('https://api.spacexdata.com/v4/launches/upcoming');
-        const spacexData = await spacexResponse.json();
-        if (spacexData.length > 0) {
-          const nextLaunch = spacexData[0];
-          const launchInfo = document.createElement('div');
-          launchInfo.className = 'alert alert-info mt-3';
-          launchInfo.innerHTML = `<strong>Next SpaceX Launch:</strong> ${nextLaunch.name} - ${new Date(nextLaunch.date_unix * 1000).toLocaleDateString()}`;
-          grid.appendChild(launchInfo);
-        }
-      } catch (e) {
-        console.log('SpaceX API not available');
-      }
-    }
-    
-    document.getElementById('categoryModalBody').innerHTML = '';
     document.getElementById('categoryModalBody').appendChild(grid);
     
   } else if (sectionId === 'solar-system') {
@@ -155,8 +175,81 @@ mainContainer.addEventListener('click', async function(e) {
     document.getElementById('categoryModalBody').innerHTML = '';
     document.getElementById('categoryModalBody').appendChild(grid);
     
+  } else if (sectionId === 'discover-mars') {
+    // Show Mars rovers and discoveries
+    const grid = document.createElement('div');
+    grid.className = 'row gallery-grid';
+    marsData.forEach(item => {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-3';
+      col.innerHTML = `<img src="${item.image}" alt="${item.name}" class="img-fluid rounded shadow-sm category-photo" style="cursor:pointer;" data-title="${encodeURIComponent(item.name)}" data-desc="${encodeURIComponent(item.desc)}" data-img="${encodeURIComponent(item.image)}">`;
+      grid.appendChild(col);
+    });
+    document.getElementById('categoryModalBody').innerHTML = '';
+    document.getElementById('categoryModalBody').appendChild(grid);
+    
+  } else if (sectionId === 'space-stations') {
+    // Show space stations
+    const grid = document.createElement('div');
+    grid.className = 'row gallery-grid';
+    spaceStations.forEach(station => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 mb-3';
+      col.innerHTML = `
+        <div class="station-card" style="cursor:pointer;" data-name="${encodeURIComponent(station.name)}" data-desc="${encodeURIComponent(station.desc)}" data-img="${encodeURIComponent(station.image)}">
+          <img src="${station.image}" alt="${station.name}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 200px; object-fit: cover;">
+          <h5 class="mt-2">${station.name}</h5>
+        </div>
+      `;
+      grid.appendChild(col);
+    });
+    document.getElementById('categoryModalBody').innerHTML = '';
+    document.getElementById('categoryModalBody').appendChild(grid);
+    
+  } else if (sectionId === 'earth-3d') {
+    // Show 3D Earth with rotation
+    const content = document.createElement('div');
+    content.innerHTML = `
+      <div class="text-center">
+        <h4>Interactive 3D Earth</h4>
+        <p>Click and drag to rotate the Earth in 3D</p>
+        <div id="earth-3d-container" style="width: 100%; height: 400px; background: #000; border-radius: 10px; position: relative; overflow: hidden;">
+          <div id="earth-3d-sphere" style="width: 200px; height: 200px; background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/330px-The_Earth_seen_from_Apollo_17.jpg') center/cover; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: grab; transition: transform 0.1s ease;"></div>
+        </div>
+        <p class="mt-3"><small>Note: This is a simplified 3D representation. For full 3D experience, consider using WebGL libraries like Three.js.</small></p>
+      </div>
+    `;
+    document.getElementById('categoryModalBody').innerHTML = '';
+    document.getElementById('categoryModalBody').appendChild(content);
+    
+    // Simple 3D rotation effect
+    const earthSphere = document.getElementById('earth-3d-sphere');
+    let isDragging = false;
+    let startX = 0;
+    let rotationY = 0;
+    
+    earthSphere.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      earthSphere.style.cursor = 'grabbing';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const deltaX = e.clientX - startX;
+        rotationY += deltaX * 0.5;
+        earthSphere.style.transform = `translate(-50%, -50%) rotateY(${rotationY}deg)`;
+        startX = e.clientX;
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      earthSphere.style.cursor = 'grab';
+    });
+    
   } else if (sectionId === 'astronaut-info') {
-    // Show astronauts
+    // Show astronauts with nationality flags
     const grid = document.createElement('div');
     grid.className = 'row gallery-grid';
     astronauts.forEach(astronaut => {
@@ -164,7 +257,7 @@ mainContainer.addEventListener('click', async function(e) {
       col.className = 'col-md-4 mb-3';
       col.innerHTML = `
         <div class="astronaut-card" style="cursor:pointer;" data-name="${encodeURIComponent(astronaut.name)}" data-nationality="${encodeURIComponent(astronaut.nationality)}" data-age="${encodeURIComponent(astronaut.age)}" data-height="${encodeURIComponent(astronaut.height)}" data-time="${encodeURIComponent(astronaut.timeInSpace)}" data-img="${encodeURIComponent(astronaut.image)}">
-          <img src="${astronaut.image}" alt="${astronaut.name}" class="img-fluid rounded shadow-sm" style="width: 100%; height: 200px; object-fit: cover;">
+          <img src="${astronaut.image}" alt="${astronaut.nationality} flag" class="img-fluid rounded shadow-sm" style="width: 100%; height: 120px; object-fit: cover;">
           <h5 class="mt-2">${astronaut.name}</h5>
           <p class="text-muted">${astronaut.nationality}</p>
         </div>
@@ -203,6 +296,9 @@ mainContainer.addEventListener('click', async function(e) {
             </div>
             <button type="submit" class="btn btn-primary">Send Application</button>
           </form>
+          <div class="alert alert-info mt-3">
+            <small><strong>Note:</strong> This is a demo form. In a real application, you would need a backend server to actually send emails to eventhorizonweb777@gmail.com</small>
+          </div>
         </div>
       </div>
     `;
@@ -214,8 +310,7 @@ mainContainer.addEventListener('click', async function(e) {
       e.preventDefault();
       const email = document.getElementById('applicant-email').value;
       const message = document.getElementById('applicant-message').value;
-      // In a real app, you'd send this to your server
-      alert(`Application sent! We'll contact you at ${email} soon.`);
+      alert(`Demo: Application would be sent to eventhorizonweb777@gmail.com\nFrom: ${email}\nMessage: ${message}\n\nNote: This requires a backend server to actually send emails.`);
     });
   }
   
