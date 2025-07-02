@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NASA APOD</title>
+  <style>
+    body { 
+      background-color: black; 
+      color: white; 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      margin: 0;
+      padding: 20px;
+    }
+    .container { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 20px;
+    }
+    img { 
+      max-width: 90%; 
+      height: auto; 
+      margin-top: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+    h1 {
+      color: #007bff;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #7ecfff;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .loading {
+      color: #7ecfff;
+      font-style: italic;
+    }
+    .error {
+      color: #ff6b6b;
+      background: rgba(255, 107, 107, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ff6b6b;
+    }
+    .api-note {
+      background: rgba(126, 207, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #7ecfff;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>NASA Astronomy Picture of the Day</h1>
+  <h2 id="title" class="loading">Loading...</h2>
+  <img id="apod-img" src="" alt="NASA APOD" style="display: none;" />
+  <p id="desc" class="loading">Loading description...</p>
+  
+  <div class="api-note">
+    <strong>Note:</strong> This demo uses NASA's DEMO_KEY. For production use, get your own API key from 
+    <a href="https://api.nasa.gov/" target="_blank" style="color: #7ecfff;">api.nasa.gov</a>
+  </div>
+</div>
+
+<script>
+  const apiKey = 'DEMO_KEY'; // 🔁 Replace with your key
+
+  fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch NASA APOD');
+      }
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById('title').textContent = data.title;
+      document.getElementById('title').className = '';
+      
+      const img = document.getElementById('apod-img');
+      img.src = data.url;
+      img.style.display = 'block';
+      
+      document.getElementById('desc').textContent = data.explanation;
+      document.getElementById('desc').className = '';
+    })
+    .catch(error => {
+      console.error('Error fetching NASA APOD:', error);
+      document.getElementById('title').textContent = 'Error Loading APOD';
+      document.getElementById('title').className = 'error';
+      document.getElementById('desc').innerHTML = `
+        <div class="error">
+          <strong>Error:</strong> Unable to load NASA Astronomy Picture of the Day.<br>
+          Please check your internet connection or try again later.<br><br>
+          <strong>Technical Details:</strong> ${error.message}
+        </div>
+      `;
+    });
+</script>
+
+</body>
+</html> 

@@ -71,16 +71,22 @@
       <h2 class="mb-4">Voices from Space</h2>
       <div class="row">
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Buzz_Aldrin.jpg/330px-Buzz_Aldrin.jpg" class="quote-img mb-2" alt="Buzz Aldrin">
-          <p><em>"Mars is there, waiting to be reached."</em><br><strong>- Buzz Aldrin</strong></p>
+          <div class="quote-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Buzz_Aldrin.jpg/1200px-Buzz_Aldrin.jpg" class="quote-img mb-2" alt="Buzz Aldrin">
+            <p><em>"Mars is there, waiting to be reached."</em><br><strong>- Buzz Aldrin</strong></p>
+          </div>
         </div>
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Stephen_Hawking.StarChild.jpg/330px-Stephen_Hawking.StarChild.jpg" class="quote-img mb-2" alt="Stephen Hawking">
-          <p><em>"Look up at the stars and not down at your feet."</em><br><strong>- Stephen Hawking</strong></p>
+          <div class="quote-container">
+            <img src="https://home.cern/sites/default/files/image/featured/2013/03/stephen-hawking.jpg" class="quote-img mb-2" alt="Stephen Hawking">
+            <p><em>"Look up at the stars and not down at your feet."</em><br><strong>- Stephen Hawking</strong></p>
+          </div>
         </div>
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Neil_Armstrong_pose.jpg/330px-Neil_Armstrong_pose.jpg" class="quote-img mb-2" alt="Neil Armstrong">
-          <p><em>"One small step for man, one giant leap for mankind."</em><br><strong>- Neil Armstrong</strong></p>
+          <div class="quote-container">
+            <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2009/06/neil_armstrong/9672212-3-eng-GB/Neil_Armstrong_pillars.jpg" class="quote-img mb-2" alt="Neil Armstrong">
+            <p><em>"One small step for man, one giant leap for mankind."</em><br><strong>- Neil Armstrong</strong></p>
+          </div>
         </div>
       </div>
     </div>
@@ -92,31 +98,106 @@
       <h2 class="mb-4">Discover Space Features</h2>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <a href="explore.html#spacex" class="photo-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Falcon_Heavy_Demo_Mission_%2839562600325%29.jpg/640px-Falcon_Heavy_Demo_Mission_%2839562600325%29.jpg" class="quote-img" alt="SpaceX Launch">
-            <p class="mt-2">The First SpaceX Launch</p>
-          </a>
+          <div class="feature-card" id="spacex-card">
+            <div class="loading-spinner" id="spacex-spinner">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <img src="" class="quote-img" alt="SpaceX Launch" id="spacex-img" style="display: none;">
+            <p class="mt-2" id="spacex-title">The First SpaceX Launch</p>
+          </div>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="explore.html#jupiter" class="photo-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter_from_Voyager_1.jpg" class="quote-img" alt="Jupiter">
-            <p class="mt-2">Learn About Jupiter – The Giant Planet</p>
-          </a>
+          <div class="feature-card" id="jupiter-card">
+            <div class="loading-spinner" id="jupiter-spinner">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <img src="" class="quote-img" alt="Jupiter" id="jupiter-img" style="display: none;">
+            <p class="mt-2" id="jupiter-title">Learn About Jupiter – The Giant Planet</p>
+          </div>
         </div>
         <div class="col-md-4 mb-4">
-          <a href="explore.html#moon" class="photo-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Apollo_11_Lunar_Module_on_the_Moon.jpg" class="quote-img" alt="Moon Landing">
-            <p class="mt-2">Apollo 11 – First Moon Landing</p>
-          </a>
+          <div class="feature-card" id="moon-card">
+            <div class="loading-spinner" id="moon-spinner">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <img src="" class="quote-img" alt="Moon Landing" id="moon-img" style="display: none;">
+            <p class="mt-2" id="moon-title">Apollo 11 – First Moon Landing</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Modals -->
+  <!-- SpaceX Modal -->
+  <div class="modal fade" id="spacexModal" tabindex="-1" aria-labelledby="spacexModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="spacexModalLabel">SpaceX Launch Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="spacexModalBody">
+          <div class="text-center">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jupiter Modal -->
+  <div class="modal fade" id="jupiterModal" tabindex="-1" aria-labelledby="jupiterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="jupiterModalLabel">Jupiter - The Giant Planet</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="jupiterModalBody">
+          <div class="text-center">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Moon Landing Modal -->
+  <div class="modal fade" id="moonModal" tabindex="-1" aria-labelledby="moonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="moonModalLabel">Apollo 11 - First Moon Landing</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="moonModalBody">
+          <div class="text-center">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     &copy; 2025 Event Horizon – All Rights Reserved
   </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
 
 </body>

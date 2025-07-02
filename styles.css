@@ -5,7 +5,7 @@ body {
 }
 
 .navbar-custom {
-  background-color: #14122a;
+  background-color: rgb(20, 18, 42);
   position: fixed;
   top: 0;
   left: 0;
@@ -54,40 +54,116 @@ html, body {
 
 /* Navbar */
 .navbar-custom {
-  background-color: #23244a;
+  background-color: rgb(20, 18, 42);
 }
 
 .navbar-brand img {
-  height: 48px;
+  height: 48px !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.navbar-nav {
+  align-items: center !important;
+}
+
+.navbar-nav .nav-item {
+  display: flex !important;
+  align-items: center !important;
 }
 
 .navbar-nav .nav-link {
-  font-weight: bold;
-  font-size: 1.1rem;
+  font-weight: bold !important;
+  font-size: 1.3rem !important;
   color: #fff !important;
-  padding: 0 10px;
-  position: relative;
-}
-
-.navbar-nav .nav-link::after {
-  content: '|';
-  color: #ffffff;
-  position: absolute;
-  right: -10px;
-}
-
-.navbar-nav .nav-item:last-child .nav-link::after {
-  content: '';
+  padding: 0 15px !important;
+  transition: color 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  line-height: 1.5 !important;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #14122a!important;
+  color: #7ecfff !important;
+  text-decoration: none !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: #7ecfff !important;
 }
 
 /* Quotes & Features */
 .quote-img {
   width: 100%;
+  height: 300px; /* Fixed height for identical sizes */
+  object-fit: cover; /* Maintains aspect ratio while filling the container */
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.quote-img:hover {
+  transform: scale(1.05);
+}
+
+/* Quote containers for section 2 */
+.quote-container {
+  height: 400px; /* Fixed height for consistent layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quote-container p {
+  margin-top: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Feature cards for section 3 */
+.feature-card {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.feature-card img {
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+.feature-card p {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #7ecfff;
 }
 
 .photo-link {
@@ -100,9 +176,69 @@ html, body {
   color: #222;
 }
 
+/* Modal styling */
+.modal-content {
+  background: rgba(20, 18, 42, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(126, 207, 255, 0.3);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(126, 207, 255, 0.3);
+}
+
+.modal-title {
+  color: #7ecfff;
+  font-weight: bold;
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-body video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-body h6 {
+  color: #7ecfff;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.modal-body p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.modal-body .ratio {
+  margin-bottom: 15px;
+}
+
+.modal-body iframe {
+  border-radius: 10px;
+}
+
+.modal-body .btn-outline-light {
+  border-color: rgba(126, 207, 255, 0.5);
+  color: #7ecfff;
+}
+
+.modal-body .btn-outline-light:hover {
+  background-color: #7ecfff;
+  border-color: #7ecfff;
+  color: #14122a;
+}
+
 /* Footer */
 .footer {
-  background-color: #14122a;
+  background-color: rgb(20, 18, 42);
   text-align: center;
   padding: 10px;
   font-weight: bold;

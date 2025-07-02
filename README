@@ -1,10 +1,24 @@
-Name: Ghady AL Chouity
+#Name: 
+Ghady AL Chouity
 
-API used:-NASA -j6kC9r56Fqs7i3SgFefeJJBeRQzHG6Jd0Za4ggSp
-	 -Space X open source -https://api.spacexdata.com/v4/
-	 -Wolfram alpha -Y83QV9-56QJXGQXXY
+#API used:
+-NASA -j6kC9r56Fqs7i3SgFefeJJBeRQzHG6Jd0Za4ggSp
+-Space X open source -https://api.spacexdata.com/v4/
+-Wolfram alpha -Y83QV9-56QJXGQXXY
 
-Description: Event horizon is a website for everyone who like space and want to learn more about the things that are happening around us but not always visible to naked eye. Giving good graphics and easy to use; this website should be usable by everyone.
+#Description:
+ Event horizon is a website for everyone who like space and want to learn more about the things that are happening around us but not always visible to naked eye. Giving good graphics and easy to use; this website should be usable by everyone.
 
-Special requirement: Implement a modal popup for a detailed view of an item
+#Special requirement: 
+Implement a modal popup for a detailed view of an item
 Basically I used it for every image that needed more information. Featuring the image wanted, a short description of the image and a close button.  	
+
+#Warning: 
+For an email to be received the code need to be connected to a sever and some backend work should be done so everything works correctly. 
+I would advise to download the image, audio and video folders for better experience.
+Give some time to everything in the site to load because there are heavy images that aren't locally stored.
+If you want the access to the Email pls email me ghadychouity@hotmail.com so I can give you the account with the pass.
+Hope to see you applied for the astronaut program in the explore page.
+
+The first version of the website was uploaded at 11:50 7/1/2025
+The second and latest version of the website was uploaded at 9:37 7/2/2025
